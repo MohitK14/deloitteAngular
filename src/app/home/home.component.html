@@ -1,0 +1,47 @@
+<div class="search-box">
+    <form  class="searchForm">
+        <div class="searchDiv" (keyup.enter)="onSubmit()">
+            <span class="searchIcon"> 
+                <input type="text" [(ngModel)]="country" name="country" placeholder="Search for a country">
+            </span>
+        </div>
+        <div class="noData" *ngIf="errorMsgFlag">No such item exist</div>
+    </form>
+</div>
+<div class="row row-list">
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-no-padding">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="filter">
+            <select class="region" (change)="onRegionChange()" [(ngModel)]="region" name="region" #pickedName="ngModel">
+                <option disabled value="">Filter by region</option>
+                <option *ngFor="let x of regionList" value="{{x.key}}">{{x.value}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-no-padding dataSpace">
+        
+        <div class="row row-no-margin">
+        <div class="eventDiv col-lg-4 col-md-4 col-sm-12 col-xs-12 mobileDevice" *ngFor="let item of listData">
+
+            <div  (click)="getDetails(item.id)">
+                <span><img src="{{item.link}}" class="flagPic"></span>
+                <div class="content"> 
+                    <div class="row row-no-margin ">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-no-padding">
+                            <span class="bold">Name: </span> {{item.name}}
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-no-padding">
+                           <span class="bold">Region: </span> {{item.region}}
+                        </div>
+                    </div>
+                <div><span class="bold">Population: </span>: {{item.population}}</div>
+                </div> 
+                </div>
+        </div>
+        </div>
+</div>
+
+</div>

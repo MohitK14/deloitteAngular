@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+.row-no-margin{
+    margin: 0px !important;
+}
+
+.col-no-padding{
+    padding: 0px !important;
+}
+
+.spaceGap{
+    margin-left: 25px;
+}
+
+$black: #000;
+$contentBorder: #dad9d9;
+$red: #ff0000;

@@ -1,0 +1,23 @@
+
+
+<div class="mobileDevice">
+    <div class="backBtn" (click)="back()">
+        <span class="backArrow"><span class="backText">Back</span></span>
+    </div>
+
+    <div class="row row-no-margin mainContent">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-no-padding">
+           <span><img src="{{dataList?dataList.link:null}}" class="flagData"></span>
+        </div>  
+        
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 data">
+            <div class="countryName">{{dataList?dataList.name:null}}</div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div><span class="titleName">Native Name</span>: {{dataList?dataList.region:null}}</div>
+                    <div><span class="titleName">Population</span>: {{dataList?dataList.population:null}}</div>
+                </div>  
+            </div>    
+        </div>  
+    </div>
+</div>
